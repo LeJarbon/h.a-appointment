@@ -1,0 +1,51 @@
+﻿@model Ha.appointment.Models.Model.User
+@{
+    ViewData["Title"] = "AddUser";
+}
+
+<h1>Kayıt Ol</h1>
+<form method="post">
+                        <div class="text-danger">
+                            @Html.ValidationSummary(true)
+                        </div>
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Adınız</label>
+
+                                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @required = "" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Soyadınız</label>
+                                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", @required = "" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>E-Mail</label>
+                                    @Html.TextBoxFor(x => x.Email, new { @type = "email", @class = "form-control", @required = "" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Şifrenizi Giriniz</label>
+                                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @required = "" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Şifre Tekrar</label>
+                                    @Html.TextBoxFor(x => x.ConfirmPassword, new { @class = "form-control", @required = "" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-fill btn-primary btn-block">Kayıt Ol</button>
+                        </div>
+                    </form>
